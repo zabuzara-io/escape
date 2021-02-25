@@ -1,0 +1,373 @@
+#!/bin/bash
+
+trap "showendlogo" SIGINT SIGQUIT
+
+showendlogo(){
+clear
+echo '                                                     '
+echo '      /------------------------------|| ___           '
+echo '     /  written by         ///////// ||///---||       '
+echo -e '     \  '"\e[96mzabuzara@yahoo.com\e[0m"' // 0 0 // ||\\\\\\---||       '
+echo '      \---------------------\  |  /--|| //            '
+echo '                   __________\_-_/_____//             '
+echo '                   \\---------| |------/              '
+echo '                   //        // \\                    '
+echo ' /-------------||--\\///--| //  //                    '
+echo ' \-------------||---\_\---| \\ @@                     '
+echo '                            @@                        '
+echo '                                                     '
+exit 0
+}
+
+
+function runclose(){
+showendlogo
+}
+function runhowtouse(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"|  How to use?  |"
+echo	"|---------------|"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo    "|                	 	                                                           |"
+echo    "|	# use 'echo' command with option '-e'					           |"
+echo    "|       # just use this form (\"\\e[0m\") for escape-code                                     |"
+echo    "|	                 	                                                           |"
+echo    "|       1) format and resetall                                                             |"
+echo    "|	example) "'echo -e '"\"\\e[31m Hello World \\e[0m\" 				     	   |"
+echo -e "|	output) \e[31m Hello World \e[0m					               		   |"
+echo    "|											   |"
+echo    "|	2) format and resetone						                   |"
+echo    "|	example) "'echo -e '"\"H\\e[4me\\e[24mllo W\\e[4mo\\e[24mrld \" 			   	   |"
+echo -e "|	output)  H\e[4me\e[24mllo W\e[4mo\e[24mrld				           			   |"
+echo    "|											   |"
+echo    "|	3) combi formatting non-256Colors					           |"
+echo    "|	example) "'echo -e '"\"\\e[1;31;43m Hello World \\e[0m\" 				   |"
+echo -e "|	output)  \e[1;31;43m Hello World \e[0m				             		     	   |"
+echo    "|											   |"
+echo    "|	4) combi formatting 256Colors						           |"
+echo    "|	example) "'echo -e '"\"\\e[1;5;38;5;241;48;5;66m Hello World \\e[0m\" 			   |"
+echo -e "|	output)  \e[1;5;38;5;241;48;5;66m Hello World \e[0m				             		     	   |"
+echo    "|											   |"
+echo    "|											   |"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+menustart
+}
+function runfailed(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"|    Failed     |"
+echo	"|---------------|"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo    "|                 	                                                                   |"
+echo    "|										           |"
+echo    "|  ||||||||||||||  	||||	      |||||||  |||||	      ||||||||||||  |||||||||	   |"
+echo    "|  ||||||||||||||      ||||||	      |||||||  |||||	      ||||||||||||  |||||||||||    |"
+echo    "|  |||||	      ||||||||	        |||    |||||	      ||||	    ||||    ||||   |"
+echo    "|  |||||	     ||||  ||||	        |||    |||||	      ||||	    ||||     ||||  |"
+echo    "|  ||||||||||	    ||||    ||||        |||    |||||	      |||||||||	    ||||     ||||  |"
+echo    "|  ||||||||||	   ||||||||||||||       |||    |||||	      ||||	    ||||     ||||  |"
+echo    "|  |||||	  ||||||||||||||||      |||    |||||	      ||||	    ||||    ||||   |"
+echo    "|  |||||	 ||||	       ||||   |||||||  |||||||||||||  ||||||||||||  |||||||||||	   |"
+echo    "|  |||||	||||		||||  |||||||  |||||||||||||  ||||||||||||  |||||||||	   |"
+echo    "|										           |"
+echo    "|										           |"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+menustart
+}
+function runset(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"|      Set      |"
+echo	"|---------------|"
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo    "| Description   | Preview	           | Example                                |"
+echo    "|_______________|__________________________|________________________________________|"
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo -e '| Bold/Bright   | normal \e[1mformatted\e[0m  	   | '"echo -e \"normal \\\e[1m formatted \\\e[0m\""' |'
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo -e '| Dim           | normal \e[2mformatted\e[0m 	   | '"echo -e \"normal \\\e[2m formatted \\\e[0m\""' |'
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo -e '| Underlined    | normal \e[4mformatted\e[0m 	   | '"echo -e \"normal \\\e[4m formatted \\\e[0m\""' |'
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo -e '| Blink         | normal \e[5mformatted\e[0m 	   | '"echo -e \"normal \\\e[5m formatted \\\e[0m\""' |'
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo -e '| Reverse       | normal \e[7mformatted\e[0m 	   | '"echo -e \"normal \\\e[7m formatted \\\e[0m\""' |'
+echo    "|---------------|--------------------------|----------------------------------------|"
+echo -e '| Hidden        | normal \e[8mformatted\e[0m 	   | '"echo -e \"normal \\\e[8m formatted \\\e[0m\""' |'
+echo    "|---------------|--------------------------|----------------------------------------|"
+menustart
+}
+function runreset(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"|     Reset     |"
+echo	"|---------------|"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo    "| Description   | Preview	           | Example                                       |"
+echo    "|_______________|__________________________|_______________________________________________|"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Bold/Bright   | normal \e[1mformatted\e[0m normal  | '"echo -e \"normal \\\e[1m formatted \\\e[0m normal\""' |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Dim           | normal \e[2mformatted\e[22m normal  | '"echo -e \"normal \\\e[2m formatted \\\e[22m normal\""'|'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Underlined    | normal \e[4mformatted\e[24m normal  | '"echo -e \"normal \\\e[4m formatted \\\e[24m normal\""'|'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Blink         | normal \e[5mformatted\e[25m normal  | '"echo -e \"normal \\\e[5m formatted \\\e[25m normal\""'|'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Reverse       | normal \e[7mformatted\e[27m normal  | '"echo -e \"normal \\\e[7m formatted \\\e[27m normal\""'|'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Hidden        | normal \e[8mformatted\e[28m normal  | '"echo -e \"normal \\\e[8m formatted \\\e[28m normal\""'|'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+menustart
+}
+function runforeground(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"|  Foreground   |"
+echo	"|---------------|"
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo    "| Color         | Preview	           | Example                                     |"
+echo    "|_______________|__________________________|_____________________________________________|"
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Default       | Default \e[39mDefault\e[0m 	   | '"echo -e \"Default \\\e[39m Default \\\e[0m\""'      |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Black         | Default \e[30mBlack\e[0m            | '"echo -e \"Default \\\e[30m Black \\\e[0m\""'        |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Red           | Default \e[31mRed\e[0m              | '"echo -e \"Default \\\e[31m Red \\\e[0m\""'          |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Green         | Default \e[32mGreen\e[0m            | '"echo -e \"Default \\\e[32m Green \\\e[0m\""'        |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Yellow        | Default \e[33mYellow\e[0m           | '"echo -e \"Default \\\e[33m Yellow \\\e[0m\""'       |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Blue          | Default \e[34mBlue\e[0m             | '"echo -e \"Default \\\e[34m Blue \\\e[0m\""'         |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Magneta       | Default \e[35mMagneta\e[0m          | '"echo -e \"Default \\\e[35m Magneta \\\e[0m\""'      |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Cyan          | Default \e[36mCyan\e[0m             | '"echo -e \"Default \\\e[36m Cyan \\\e[0m\""'         |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light gray    | Default \e[37mLight gray\e[0m       | '"echo -e \"Default \\\e[37m Light gray \\\e[0m\""'   |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Dark gray     | Default \e[90mDark gray\e[0m        | '"echo -e \"Default \\\e[90m Dark gray \\\e[0m\""'    |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light red     | Default \e[91mLight red\e[0m        | '"echo -e \"Default \\\e[91m Light red \\\e[0m\""'    |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light green   | Default \e[92mLight green\e[0m      | '"echo -e \"Default \\\e[92m Light green \\\e[0m\""'  |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light yellow  | Default \e[93mLight yellow\e[0m     | '"echo -e \"Default \\\e[93m Light yellow \\\e[0m\""' |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light blue    | Default \e[94mLight blue\e[0m       | '"echo -e \"Default \\\e[94m Light blue \\\e[0m\""'   |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light magneta | Default \e[95mLight magneta\e[0m    | '"echo -e \"Default \\\e[95m Light magneta \\\e[0m\""'|'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| Light cyan    | Default \e[96mLight cyan\e[0m       | '"echo -e \"Default \\\e[96m Light cyan \\\e[0m\""'   |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+echo -e '| White         | Default \e[97mWhite\e[0m            | '"echo -e \"Default \\\e[97m White \\\e[0m\""'        |'
+echo    "|---------------|--------------------------|---------------------------------------------|"
+menustart
+}
+function runbackground(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"|  Background   |"
+echo	"|---------------|"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo    "| Color         | Preview	           | Example                                       |"
+echo    "|_______________|__________________________|_______________________________________________|"
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Default       | Default \e[49mDefault\e[0m 	   | '"echo -e \"Default \\\e[49m Default \\\e[0m\""'        |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Black         | Default \e[40mBlack\e[0m            | '"echo -e \"Default \\\e[40m Black \\\e[0m\""'          |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Red           | Default \e[41mRed\e[0m              | '"echo -e \"Default \\\e[41m Red \\\e[0m\""'            |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Green         | Default \e[42mGreen\e[0m            | '"echo -e \"Default \\\e[42m Green \\\e[0m\""'          |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Yellow        | Default \e[43mYellow\e[0m           | '"echo -e \"Default \\\e[43m Yellow \\\e[0m\""'         |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Blue          | Default \e[44mBlue\e[0m             | '"echo -e \"Default \\\e[44m Blue \\\e[0m\""'           |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Magneta       | Default \e[45mMagneta\e[0m          | '"echo -e \"Default \\\e[45m Magneta \\\e[0m\""'        |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Cyan          | Default \e[46mCyan\e[0m             | '"echo -e \"Default \\\e[46m Cyan \\\e[0m\""'           |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light gray    | Default \e[47mLight gray\e[0m       | '"echo -e \"Default \\\e[47m Light gray \\\e[0m\""'     |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Dark gray     | Default \e[100mDark gray\e[0m        | '"echo -e \"Default \\\e[100m Dark gray \\\e[0m\""'     |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light red     | Default \e[101mLight red\e[0m        | '"echo -e \"Default \\\e[101m Light red \\\e[0m\""'     |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light green   | Default \e[102mLight green\e[0m      | '"echo -e \"Default \\\e[102m Light green \\\e[0m\""'   |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light yellow  | Default \e[103mLight yellow\e[0m     | '"echo -e \"Default \\\e[103m Light yellow \\\e[0m\""'  |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light blue    | Default \e[104mLight blue\e[0m       | '"echo -e \"Default \\\e[104m Light blue \\\e[0m\""'    |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light magneta | Default \e[105mLight magneta\e[0m    | '"echo -e \"Default \\\e[105m Light magneta \\\e[0m\""' |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| Light cyan    | Default \e[106mLight cyan\e[0m       | '"echo -e \"Default \\\e[106m Light cyan \\\e[0m\""'    |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+echo -e '| White         | Default \e[107mWhite\e[0m            | '"echo -e \"Default \\\e[107m White \\\e[0m\""'         |'
+echo    "|---------------|--------------------------|-----------------------------------------------|"
+menustart
+}
+function run256colors(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+unset modulo
+unset after
+unset end
+echo    "|---------------|"
+echo	"|256-Foregrounds|"
+echo	"|---------------|"
+echo "|---------------|---------------|---------------|---------------|---------------|---------------|----------------|"
+echo "| ColorCode     | ColorCode     | ColorCode     | ColorCode     | ColorCode     | ColorCode     | ColorCode      |"
+echo "|_______________|_______________|_______________|_______________|_______________|_______________|________________|"
+echo "|---------------|---------------|---------------|---------------|---------------|---------------|----------------|"
+for x in {0..256}
+do
+	if [[  $(( x % 7 )) == 6  ]]
+	then
+		modulo="|\n"
+	else
+		modulo=""
+	fi
+	if [[ $x < 10 ]]
+	then
+		after="		"
+	elif [[ $x  < 100 ]]
+	then
+		after="    "
+	fi
+	if [[ $x == 256 ]]
+	then
+		end="|---------------|----------------|\n"
+		after=""
+	fi
+	echo -e -n '| \e[38;5;'${x}'m'"\\\e[38;5;${x}m"'\e[0m\t'$after$modulo$end
+done
+echo "|---------------|---------------|---------------|---------------|---------------|"
+menustart
+}
+function run256backgrounds(){
+clear
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+unset modulo
+unset after
+unset end
+unset space
+echo    "|---------------|"
+echo	"|256-Backgrounds|"
+echo	"|---------------|"
+echo "|---------------|---------------|---------------|---------------|---------------|---------------|----------------|"
+echo "| ColorCode     | ColorCode     | ColorCode     | ColorCode     | ColorCode     | ColorCode     | ColorCode      |"
+echo "|_______________|_______________|_______________|_______________|_______________|_______________|________________|"
+echo "|---------------|---------------|---------------|---------------|---------------|---------------|----------------|"
+for x in {0..256}
+do
+	if [[  $(( x % 7 )) == 6  ]]
+	then
+		modulo="|\n"
+	else
+		modulo=""
+	fi
+	if [[ $x < 10 ]]
+	then
+		after="		  "
+	fi
+	if [[ $x  < 100 ]]
+	then
+		after="      	"
+	fi
+	if [ $x -ge '0' -a  $x -lt '10' ]
+	then
+		space="   "
+	elif [ $x -gt '9' -a $x -lt '100' ]
+	then
+		space="  "
+	elif [ $x -gt '99' ]
+	then
+		space=" "
+	fi
+	if [[ $x == 256 ]]
+	then
+		end="|---------------|----------------|\n"
+		after=""
+	fi
+	echo -e -n '| \e[48;5;'${x}'m'"\\\e[48;5;${x}m$space"'\e[0m\t'$after$modulo$end
+	unset space
+done
+echo "|---------------|---------------|---------------|---------------|---------------|"
+menustart
+}
+function menustart(){
+local start=$1
+if [ $start ]
+then
+echo ""
+echo -e "  \e[4m\e[92m\e[1mEscape Codes v1.0 \e[0m"
+echo ""
+echo    "|---------------|"
+echo	"| Starting Menu |"
+echo	"|---------------|"
+fi
+echo	"|_______________|"
+echo	  "|---------------|----------------|"
+echo  -e  "| Font Formatting in Bash-Script |"
+echo	  "|--------------------------------|"
+echo 	  "    | 0) Back to Start  --|______|"
+echo 	  "    | 1) Set  ------------|______|"
+echo	  "    | 2) Reset  ----------|______|"
+echo	  "    | 3) Foreground  -----|______|"
+echo	  "    | 4) Background  -----|______|"
+echo	  "    | 5) 256Colors  ------|______|"
+echo	  "    | 6) 256Backgrounds --|______|"
+echo	  "    | 7) Help ------------|______|"
+echo	  "|___| 8) Exit ------------|______|"
+echo	  "|___|"
+echo -n -e   "|\e[96m===>\e[0m ";read option;
+if [[ ! -z $option ]]
+then
+	case $option in
+	0) clear; menustart true;;
+	1|[sS]et) clear;runset ;;
+	2|[rR]eset) clear;runreset ;;
+	3|[fF]oreground) clear;runforeground ;;
+	4|[bB]ackground) clear;runbackground ;;
+	5|256[cC]olors) clear;run256colors ;;
+	6|256[bB]ackgrunds) clear;run256backgrounds ;;
+	7|[hH]elp) runhowtouse;;
+	8|[eE]xit) runclose;;
+	*) clear;runfailed;;
+	esac
+else
+	clear
+	menustart true
+fi
+
+}
+clear
+menustart true
+
